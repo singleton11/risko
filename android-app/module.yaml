@@ -1,0 +1,14 @@
+product: android/app
+
+settings:
+  compose: enabled
+
+  android:
+    namespace: "io.github.singleton11"
+  
+dependencies:
+  - ../shared
+  - $compose.foundation
+  - $compose.material3
+  - androidx.activity:activity-compose:1.7.2
+  - androidx.appcompat:appcompat:1.6.1
