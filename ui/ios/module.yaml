@@ -4,4 +4,4 @@ settings:
   compose: enabled
   
 dependencies:
-  - ../../ui
+  - ../.
