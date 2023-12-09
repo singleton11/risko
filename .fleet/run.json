@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "iOS App",
+            "type": "kmp-app",
+            "workingDir": "/Users/Anton.Prokhorov/projects/risko",
+            "module": "risko.ui.ios.iosAppMain~1",
+            "destination": "iPhone 15 | iOS 17.0"
+        },
+        {
+            "name": "Android App",
+            "type": "android-app",
+            "workingDir": "/Users/Anton.Prokhorov/projects/risko",
+            "allowParallelRun": true,
+            "module": "risko.ui.android.main",
+            "destination": "Pixel_3a_API_33_arm64-v8a"
+        }
+    ]
+}
