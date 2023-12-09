@@ -4,7 +4,4 @@ settings:
   compose: enabled
   
 dependencies:
-  - ../shared
-  - $compose.foundation
-  - $compose.material3
-  
+  - ../../ui
