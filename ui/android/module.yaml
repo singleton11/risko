@@ -9,4 +9,3 @@ settings:
 dependencies:
   - ../.
   - androidx.activity:activity-compose:1.7.2
-  - androidx.appcompat:appcompat:1.6.1
