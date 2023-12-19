@@ -4,7 +4,11 @@ product:
   
 settings:
   compose: enabled
+  kotlin:
+    serialization: json
   
 dependencies:
-  - $compose.foundation: exported
-  - $compose.material3: exported
+  - $compose.foundation
+  - $compose.material3
+  - com.arkivanov.decompose:decompose:2.2.0-compose-experimental-alpha05: exported
+  - com.arkivanov.decompose:extensions-compose-jetbrains:2.2.0-compose-experimental-alpha05: exported

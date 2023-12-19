@@ -5,3 +5,4 @@ settings:
   
 dependencies:
   - ../.
+  - com.arkivanov.decompose:decompose:2.2.0-compose-experimental-alpha05: exported
