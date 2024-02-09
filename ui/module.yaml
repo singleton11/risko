@@ -8,6 +8,7 @@ settings:
     serialization: json
   
 dependencies:
+  - ../core
   - $compose.foundation
   - $compose.material3
   - com.arkivanov.decompose:decompose:2.2.0-compose-experimental-alpha05: exported

@@ -5,10 +5,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.Scaffold
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -22,6 +19,7 @@ import components.portfolio.PortfolioContent
 import components.root.RootComponent.Child
 import components.search.InstrumentSearchContent
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RootContent(component: RootComponent) {
     val tabChosen by component.tabChosen.subscribeAsState()
@@ -39,15 +37,15 @@ fun RootContent(component: RootComponent) {
                     icon = { Icon(imageVector = Icons.Default.Search, contentDescription = "Instrument search") }
                 )
             }
-        }) {
+        }) { innerPadding ->
             Children(
                 stack = component.stack,
                 modifier = Modifier.fillMaxSize(),
                 animation = stackAnimation(fade() + scale())
             ) {
                 when (val instance = it.instance) {
-                    is Child.Portfolio -> PortfolioContent(component = instance.component)
-                    is Child.InstrumentSearch -> InstrumentSearchContent(component = instance.component)
+                    is Child.Portfolio -> PortfolioContent(component = instance.component, innerPadding)
+                    is Child.InstrumentSearch -> InstrumentSearchContent(component = instance.component, innerPadding)
                 }
             }
         }

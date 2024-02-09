@@ -10,7 +10,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun InstrumentSearchContent(component: InstrumentSearchComponent) {
+fun InstrumentSearchContent(component: InstrumentSearchComponent, innerPadding: PaddingValues) {
     Column(
         Modifier
             .padding(30.dp)
