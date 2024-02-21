@@ -1,15 +1,15 @@
 product:
   type: lib
-  platforms: [iosArm64, iosSimulatorArm64, iosX64, android]
-  
+  platforms: [ iosArm64, iosSimulatorArm64, iosX64, android ]
+
 settings:
   compose: enabled
   kotlin:
     serialization: json
-  
+
 dependencies:
   - ../core
   - $compose.foundation
   - $compose.material3
-  - com.arkivanov.decompose:decompose:2.2.0-compose-experimental-alpha05: exported
-  - com.arkivanov.decompose:extensions-compose-jetbrains:2.2.0-compose-experimental-alpha05: exported
+  - $libs.decompose: exported
+  - $libs.compose.extensions.jetbrains: exported

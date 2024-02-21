@@ -6,7 +6,5 @@ kotlin {
         .filterIsInstance<KotlinNativeTarget>()
         .flatMap { it.binaries }
         .filterIsInstance<Framework>()
-        .forEach {
-            it.export("com.arkivanov.decompose:decompose:2.2.0-compose-experimental-alpha05")
-        }
+        .forEach { it.export(libs.decompose) }
 }

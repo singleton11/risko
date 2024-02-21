@@ -1,1 +1,7 @@
+[versions]
+decompose = "2.2.0-compose-experimental-alpha05"
+
 [libraries]
+decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
+compose-extensions-jetbrains = { group = "com.arkivanov.decompose", name = "extensions-compose-jetbrains", version.ref = "decompose" }
+activity-compose = "androidx.activity:activity-compose:1.8.2"
