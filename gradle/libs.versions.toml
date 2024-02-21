@@ -1,5 +1,5 @@
 [versions]
-decompose = "2.2.0-compose-experimental-alpha05"
+decompose = "2.2.2-compose-experimental"
 
 [libraries]
 decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }

@@ -8,19 +8,24 @@ import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.decompose.value.update
-import com.arkivanov.essenty.parcelable.Parcelable
-import com.arkivanov.essenty.parcelable.Parcelize
 import components.portfolio.DefaultPortfolioComponent
 import components.portfolio.PortfolioComponent
 import components.root.RootComponent.Child
 import components.search.DefaultInstrumentSearchComponent
 import components.search.InstrumentSearchComponent
+import kotlinx.serialization.Serializable
 
 class DefaultRootComponent(componentContext: ComponentContext) : RootComponent, ComponentContext by componentContext {
     private val navigation = StackNavigation<Config>()
 
     override val stack: Value<ChildStack<*, Child>>
-        get() = childStack(source = navigation, initialConfiguration = Config.Portfolio, handleBackButton = true, childFactory = ::child)
+        get() = childStack(
+                source = navigation,
+                serializer = Config.serializer(),
+                initialConfiguration = Config.Portfolio,
+                handleBackButton = true,
+                childFactory = ::child
+        )
 
     private val _tabChosen: MutableValue<RootComponent.Tab> = MutableValue(initialValue = RootComponent.Tab.Portfolio)
     override val tabChosen: Value<RootComponent.Tab>
@@ -44,11 +49,12 @@ class DefaultRootComponent(componentContext: ComponentContext) : RootComponent, 
     private fun portfolioComponent(componentContext: ComponentContext): PortfolioComponent = DefaultPortfolioComponent(componentContext)
     private fun instrumentSearchComponent(componentContext: ComponentContext): InstrumentSearchComponent = DefaultInstrumentSearchComponent(componentContext)
 
-    private sealed interface Config: Parcelable {
-        @Parcelize
+    @Serializable
+    private sealed interface Config {
+        @Serializable
         data object Portfolio : Config
 
-        @Parcelize
-        data object InstrumentSearch: Config
+        @Serializable
+        data object InstrumentSearch : Config
     }
 }
